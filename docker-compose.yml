@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  webserver:
+    image: nginx:alpine
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/www:/var/www
+      - ./nginx/admin:/var/admin
+      - ./nginx/laulau:/var/laulau
+      - ./nginx/conf:/etc/nginx/
